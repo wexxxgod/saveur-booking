@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saveur — бронирование столика
 
-## Getting Started
+Тестовое задание на позицию Junior Frontend Developer.
 
-First, run the development server:
+## Запуск
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Открыть [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Что сделано
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Форма бронирования с полями: имя, телефон, дата, время, количество гостей. После отправки — экран подтверждения с деталями и кнопкой вернуться назад.
 
-## Learn More
+## Стек
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- SCSS Modules
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Решения
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Форму написал на чистом `useState` без react-hook-form — для одной формы это достаточно и не тащит лишнюю зависимость. Валидацию вынес в отдельный файл `utils/validation.ts` — так проще тестировать и переиспользовать. Ошибки показываются при потере фокуса и при попытке отправить форму. Отправка имитируется через `setTimeout` на 1.5 секунды с лоадером на кнопке.
 
-## Deploy on Vercel
+## Что бы доделал
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Подключил бы react-hook-form — при росте формы ручной стейт становится громоздким
+- Добавил бы анимацию перехода между формой и экраном подтверждения
+- Написал бы unit-тесты для функций валидации
