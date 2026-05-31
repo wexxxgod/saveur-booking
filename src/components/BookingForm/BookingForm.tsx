@@ -87,7 +87,7 @@ export function BookingForm({ onSuccess }: BookingFormProps) {
     <form className={styles.form} onSubmit={handleSubmit} noValidate>
       <div>
         <h1 className={styles.heading}>Забронировать столик</h1>
-        <p className={styles.subheading}>Заполните форму — мы свяжемся для подтверждения</p>
+        <p className={styles.subheading}>Заполните форму для бронирования столика</p>
       </div>
 
       <div className={styles.field}>
